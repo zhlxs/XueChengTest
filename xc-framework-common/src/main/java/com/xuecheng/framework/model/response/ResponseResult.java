@@ -30,6 +30,11 @@ public class ResponseResult implements Response {
         this.message = resultCode.message();
     }
 
+    public ResponseResult(int code, String message){
+        this.code = code;
+        this.message = message;
+    }
+
     public static ResponseResult SUCCESS(){
         return new ResponseResult(CommonCode.SUCCESS);
     }

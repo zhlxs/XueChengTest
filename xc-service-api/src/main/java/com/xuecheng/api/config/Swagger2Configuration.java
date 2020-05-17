@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 //
 @Configuration
-@EnableSwagger2
+@EnableSwagger2///开启扫描指定包下的controller层
 public class Swagger2Configuration {
     @Bean
     public Docket createRestApi() {
