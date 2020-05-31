@@ -14,23 +14,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cms/template")
-public class CmsTemplateController implements CmsTemplateControllerApi {
-    @Autowired
-    TemplateService templateService;
+public class CmsTemplateController implements CmsTemplateControllerApi
+{
+	@Autowired
+	TemplateService templateService;
 
-    @Override
-    @GetMapping("/comboxList")
-    public ComboxResult findAllSite() {
-        ComboxResult result = new ComboxResult();
-        try {
-            List<Combox> list = templateService.findAllSite();
-            result.setComboxList(list);
-            result.setCode(CommonCode.SUCCESS.code());
-            return result;
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-            return new ComboxResult(CommonCode.FAIL.code(),"接口异常！");
-        }
-    }
+	@Override
+	@GetMapping("/comboxList")
+	public ComboxResult findAllSite()
+	{
+		ComboxResult result = new ComboxResult();
+		try
+		{
+			List<Combox> list = templateService.findAllSite();
+			result.setComboxList(list);
+			result.setCode(CommonCode.SUCCESS.code());
+			return result;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return new ComboxResult(CommonCode.FAIL.code(), "接口异常！");
+		}
+	}
 }

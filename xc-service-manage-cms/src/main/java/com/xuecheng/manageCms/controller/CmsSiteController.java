@@ -4,7 +4,6 @@ import com.xuecheng.api.cms.CmsSiteControllerApi;
 import com.xuecheng.framework.domain.cms.response.Combox;
 import com.xuecheng.framework.domain.cms.response.ComboxResult;
 import com.xuecheng.framework.model.response.CommonCode;
-import com.xuecheng.framework.model.response.ResultCode;
 import com.xuecheng.manageCms.service.SiteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
