@@ -4,6 +4,7 @@ import com.xuecheng.api.cms.CmsPageControllerApi;
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
+import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manageCms.service.PageService;
@@ -41,9 +42,14 @@ public class CmsPageController implements CmsPageControllerApi
 
 	@Override
 	@GetMapping("/get/{id}")
-	public CmsPage findById(@PathVariable("id") String id)
+	public CmsPageResult findById(@PathVariable("id") String id)
 	{
-		return pageService.getPageById(id);
+		CmsPage cmsPage = pageService.getPageById(id);
+		if (null != cmsPage)
+		{
+			return new CmsPageResult(CommonCode.SUCCESS, cmsPage);
+		}
+		return new CmsPageResult(CommonCode.FAIL, null);
 	}
 
 	@Override
