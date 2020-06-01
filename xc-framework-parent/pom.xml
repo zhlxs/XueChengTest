@@ -10,6 +10,7 @@
     </parent>
     <modules>
         <module>../xc-framework-common</module>
+        <module>../test-freemarker</module>
     </modules>
     <groupId>com.xuecheng</groupId>
     <artifactId>xc-framework-parent</artifactId>
