@@ -23,7 +23,7 @@ public interface CmsPageControllerApi
 	 * @param id
 	 * @return
 	 */
-	public CmsPage findById(String id);
+	public CmsPageResult findById(String id);
 
 	/**
 	 * 修改页面
